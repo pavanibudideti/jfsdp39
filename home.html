@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Projects and Portfolio Management System</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-dark: #2980b9;
+            --secondary-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #ecf0f1;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            background-color: var(--primary-dark);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a, .dropdown .dropbtn {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 180px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '➤';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        ul li strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+            }
+            
+            .navbar a, .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 0.75rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                background-color: rgba(255, 255, 255, 0.1);
+                min-width: 100%;
+            }
+
+            .dropdown-content a {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Projects and Portfolio Management System</h1>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Login ▾</button>
+                <div class="dropdown-content">
+                    <a href="adminlogin.html">Admin Login</a>
+                    <a href="studentlogin.html">Student Login</a>
+                    <a href="mentorlogin.html">Mentor Login</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn">Admin Home ▾</button>
+                <div class="dropdown-content">
+                    <a href="addstudents.html">Add Students</a>
+                    <a href="viewstudentportfolios.html">View Student Portfolios</a>
+                    <a href="viewstudentprojects.html">View Student Projects</a>
+                    <a href="providefeedback.html">Provide Feedback</a>
+                    <a href="setduedate.html">Set Due Date</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Student Home ▾</button>
+                <div class="dropdown-content">
+                    <a href="uploadprojects.html">Upload Projects</a>
+                    <a href="manageportfolios.html">Manage Portfolios</a>
+                    <a href="viewadminfeedback.html">View Admin Feedback</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="admin" class="section">
+            <h2>Admin Section</h2>
+            <ul>
+                <li><strong>Add Student:</strong> Students can be added.</li>
+                <li><strong>View Student Portfolios:</strong> Access all student portfolios for review.</li>
+                <li><strong>View Student Projects:</strong> Review submitted projects with filtering options.</li>
+                <li><strong>Provide Feedback:</strong> Leave detailed feedback on student projects.</li>
+                <li><strong>Set Due Dates:</strong> Establish submission deadlines for projects.</li>
+            </ul>
+        </section>
+
+        <section id="student" class="section">
+            <h2>Student Section</h2>
+            <ul>
+                <li><strong>Upload Projects:</strong> Upload projects by specified due dates.</li>
+                <li><strong>Manage Portfolios:</strong> Create and update personal portfolios.</li>
+                <li><strong>View Admin Feedback:</strong> Access feedback provided by the admin.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

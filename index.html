@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Projects and Portfolio Management System</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-dark: #2980b9;
+            --secondary-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #ecf0f1;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* New Navbar Styles */
+        .navbar {
+            background-color: var(--white);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content .nav-link {
+            padding: 0.75rem 1rem;
+        }
+
+        .dropdown-content .nav-link:hover {
+            background-color: var(--bg-color);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 1rem;
+                border-top: 1px solid var(--bg-color);
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background-color: var(--bg-color);
+            }
+
+            .dropdown-content .nav-link {
+                padding-left: 2rem;
+            }
+        }
+
+        /* Existing styles for main content */
+        .section {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '➤';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        ul li strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Projects and Portfolio Management System</h1>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="home.html" class="nav-logo">SPPMS</a>
+            <button class="nav-toggle" id="navToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login ▾</a>
+                    <div class="dropdown-content">
+                        <a href="adminlogin.html" class="nav-link">Admin Login</a>
+                        <a href="studentlogin.html" class="nav-link">Student Login</a>
+                        <a href="mentorlogin.html" class="nav-link">Mentor Login</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Admin ▾</a>
+                    <div class="dropdown-content">
+                        <a href="addstudents.html" class="nav-link">Add Students</a>
+                        <a href="viewstudentportfolios.html" class="nav-link">View Student Portfolios</a>
+                        <a href="viewstudentprojects.html" class="nav-link">View Student Projects</a>
+                        <a href="providefeedback.html" class="nav-link">Provide Feedback</a>
+                        <a href="setduedate.html" class="nav-link">Set Due Date</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Student ▾</a>
+                    <div class="dropdown-content">
+                        <a href="uploadprojects.html" class="nav-link">Upload Projects</a>
+                        <a href="manageportfolios.html" class="nav-link">Manage Portfolios</a>
+                        <a href="viewadminfeedback.html" class="nav-link">View Admin Feedback</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="admin" class="section">
+            <h2>Admin Section</h2>
+            <ul>
+                <li><strong>Add Student:</strong> Students can be added.</li>
+                <li><strong>View Student Portfolios:</strong> Access all student portfolios for review.</li>
+                <li><strong>View Student Projects:</strong> Review submitted projects with filtering options.</li>
+                <li><strong>Provide Feedback:</strong> Leave detailed feedback on student projects.</li>
+                <li><strong>Set Due Dates:</strong> Establish submission deadlines for projects.</li>
+            </ul>
+        </section>
+
+        <section id="student" class="section">
+            <h2>Student Section</h2>
+            <ul>
+                <li><strong>Upload Projects:</strong> Upload projects by specified due dates.</li>
+                <li><strong>Manage Portfolios:</strong> Create and update personal portfolios.</li>
+                <li><strong>View Admin Feedback:</strong> Access feedback provided by the admin.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

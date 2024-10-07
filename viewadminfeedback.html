@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Admin Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .no-feedback {
+            text-align: center;
+            font-size: 16px;
+            color: #999;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Admin Feedback on Your Projects</h2>
+
+    <!-- Feedback Table -->
+    <div id="feedbackTable">
+        <!-- Placeholder for feedback data -->
+        <script>
+            const feedbackList = []; // Simulating feedback data; replace this with actual data
+
+            if (feedbackList.length > 0) {
+                document.write(`
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feedback ID</th>
+                                <th>Project Title</th>
+                                <th>Feedback</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `);
+                
+                feedbackList.forEach(feedback => {
+                    document.write(`
+                        <tr>
+                            <td>${feedback.id}</td>
+                            <td>${feedback.projectTitle}</td>
+                            <td>${feedback.feedbackContent}</td>
+                            <td>${feedback.date}</td>
+                        </tr>
+                    `);
+                });
+                
+                document.write(`
+                        </tbody>
+                    </table>
+                `);
+            } else {
+                document.write(`<p class="no-feedback">No feedback has been provided by the admin yet.</p>`);
+            }
+        </script>
+    </div>
+</div>
+
+<p><a href="index.html">Back to Home</a></p>
+
+</body>
+</html>

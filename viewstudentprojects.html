@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Projects</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Project Title</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Placeholder for project data -->
+            <script>
+                const projects = [
+                    { studentId: "001", studentName: "Alice Smith", projectTitle: "Web Development", startDate: "2024-01-15", endDate: "2024-06-15", projectId: "p001" },
+                    { studentId: "002", studentName: "Bob Johnson", projectTitle: "Data Analysis", startDate: "2024-02-10", endDate: "2024-07-20", projectId: "p002" },
+                    { studentId: "003", studentName: "Charlie Brown", projectTitle: "Mobile App", startDate: "2024-03-05", endDate: "2024-08-30", projectId: "p003" },
+                    // Add more project objects as needed
+                ];
+
+                projects.forEach(project => {
+                    document.write(`
+                        <tr>
+                            <td>${project.studentId}</td>
+                            <td>${project.studentName}</td>
+                            <td>${project.projectTitle}</td>
+                            <td>${project.startDate}</td>
+                            <td>${project.endDate}</td>
+                            <td>
+                                <a class="btn" href="viewProjectDetails?projectId=${project.projectId}">View Details</a>
+                            </td>
+                        </tr>
+                    `);
+                });
+            </script>
+        </tbody>
+    </table>
+
+    <p><a href="index.html">Back to Home</a></p>
+
+</body>
+</html>

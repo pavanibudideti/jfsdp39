@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Portfolio</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .portfolio-form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .action-buttons a {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .action-buttons a.delete {
+            background-color: #f44336;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Manage Portfolios</h2>
+    
+    <!-- Add New Portfolio Form -->
+    <div class="portfolio-form">
+        <form action="#" method="post">
+            <label for="portfolioName">Portfolio Name:</label>
+            <input type="text" id="portfolioName" name="portfolioName" required>
+            
+            <label for="portfolioDescription">Description:</label>
+            <textarea id="portfolioDescription" name="portfolioDescription" rows="4" required></textarea>
+            
+            <input type="submit" value="Add Portfolio">
+        </form>
+    </div>
+
+    <!-- List of Portfolios (This is just sample static content for HTML) -->
+    <h3>Your Portfolios</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Portfolio Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example row -->
+            <tr>
+                <td>1</td>
+                <td>Portfolio 1</td>
+                <td>Sample description of Portfolio 1</td>
+                <td class="action-buttons">
+                    <a href="#">Edit</a>
+                    <a href="#" class="delete" onclick="return confirm('Are you sure you want to delete this portfolio?');">Delete</a>
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Portfolio 2</td>
+                <td>Sample description of Portfolio 2</td>
+                <td class="action-buttons">
+                    <a href="#">Edit</a>
+                    <a href="#" class="delete" onclick="return confirm('Are you sure you want to delete this portfolio?');">Delete</a>
+                    <a href="#">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<p><a href="index.html">Back to Home</a></p>
+
+</body>
+</html>
